@@ -11,4 +11,6 @@ Contribución : los proyectos más grandes a menudo tienen secciones sobre la co
 
 Créditos : Gabriel Quiroz
 
+Link de la pagina: http://ubeje.xyz/19255/Proyecto/index.html
+
 Licencia : MIT License 
