@@ -11,4 +11,4 @@ Contribución : los proyectos más grandes a menudo tienen secciones sobre la co
 
 Créditos : Gabriel Quiroz
 
-Licencia : Finalmente, incluya una sección para la licencia de su proyecto. Para obtener más información sobre cómo elegir una licencia, consulte la guía de licencias de GitHub .
+Licencia : MIT License 
