@@ -137,7 +137,7 @@ const Parrafo = () => {
         <div style={div7}> </div>
         <div style={div8}>
           <h3 style={h3}>What We Do</h3>
-          <p style={pp}>
+          <div style={pp}>
             The Foundation focuses on specialist programmes that deliver on these core
             objectives:
             <strong>
@@ -161,7 +161,7 @@ const Parrafo = () => {
               </ul>
             </strong>
             WE CREATE OPPORTUNITIES THAT CHANGE LIVES
-          </p>
+          </div>
         </div>
       </div>
       <div style={div11}>

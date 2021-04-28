@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Miencabezado from './components/nav/encabe'
@@ -10,20 +11,23 @@ import Cuerpo2 from './components/nav/body4'
 import Cuerpo3 from './components/nav/body5'
 import Cuerpo4 from './components/nav/body6'
 
-const App = () => (
-
-  <div>
-    <Miencabezado> </Miencabezado>
-    <Sonny> </Sonny>
-    <Body> </Body>
-    <Cuerpo> </Cuerpo>
-    <Cuerpo2> </Cuerpo2>
-    <Cuerpo3> </Cuerpo3>
-    <Cuerpo4> </Cuerpo4>
-    <Footer> </Footer>
-    <Footer2> </Footer2>
-  </div>
-)
+const App = () => {
+  // eslint-disable-next-line no-unused-vars
+  const [estilo, setEstilo] = React.useState('white')
+  return (
+    <div>
+      <Miencabezado> </Miencabezado>
+      <Sonny entrada={() => setEstilo('yellow')} salida={() => setEstilo('white')} estilo={estilo}> </Sonny>
+      <Body> </Body>
+      <Cuerpo> </Cuerpo>
+      <Cuerpo2> </Cuerpo2>
+      <Cuerpo3> </Cuerpo3>
+      <Cuerpo4> </Cuerpo4>
+      <Footer> </Footer>
+      <Footer2> </Footer2>
+    </div>
+  )
+}
 
 ReactDOM.render(
   <App />,

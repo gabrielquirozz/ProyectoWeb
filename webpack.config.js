@@ -1,45 +1,46 @@
-const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path')
 
 module.exports = {
-  mode: 'development',
-  devServer: {
-    contentBase: './dist',
-  },
-  module: {
-    rules: [
-      {
-        test: /\.(jsx?)$/,
-        use: ['babel-loader', { loader: 'babel-loader' },
-          {
-            loader: '@linaria/webpack-loader',
-            options: {
-              sourceMap: process.env.NODE_ENV !== 'production',
-            },
-          }, 'eslint-loader'],
-      },
-      {
-        test: /.(png|jpe?g|gif)$/i,
-        use: 'file-loader?name=[name].[ext]&outputPath=img/',
-      },
-    ],
-  },
   entry: './src/index.js',
+  mode: 'development',
+
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'main.js',
+    filename: 'index_bundle.js',
   },
   plugins: [new HtmlWebpackPlugin({
     templateContent: `
-      <html>
-    <body>
-    <div id="root"></div>
-    <script src="./main.js"></script>
-    </body>
-    </html>
-    `,
+  <html>
+<body>
+<div id="root"></div>
+<script src="./main.js"></script>
+</body>
+</html>
+`,
+
   })],
+
+  module: {
+    rules: [
+      {
+        test: /.(jsx?)$/,
+        use: ['babel-loader', 'eslint-loader'],
+      },
+      {
+        test: /.(png|jpe?g|gif)$/i,
+        use: 'file-loader?name=[name].[ext]&outputPath=img/'
+        ,
+      },
+    ],
+  },
+
   resolve: {
     extensions: ['*', '.js', '.jsx'],
   },
+
+  devServer: {
+    contentBase: './dist',
+  },
+
 }
